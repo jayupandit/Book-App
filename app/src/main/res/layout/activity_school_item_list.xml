@@ -1,0 +1,163 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="150dp"
+        android:background="@drawable/layout_list_item_bg"
+        android:orientation="vertical"
+        android:padding="8dp"
+        android:layout_margin="22dp">
+
+        <TextView
+            android:id="@+id/txt_school_name"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="School Name"
+            android:gravity="center"
+            android:textStyle="bold|italic"
+            android:textSize="12sp"
+            android:padding="4dp"/>
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Board : "
+                android:textStyle="bold|italic"
+                android:textSize="12sp"
+                android:padding="4dp"/>
+
+            <TextView
+                android:id="@+id/txt_school_board"
+                android:layout_width="322dp"
+                android:layout_height="match_parent"
+                android:padding="4dp"
+                android:text=""
+                android:textSize="12sp" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <TextView
+                android:layout_width="50dp"
+                android:layout_height="wrap_content"
+                android:text="Book : "
+                android:textStyle="bold|italic"
+                android:textSize="12sp"
+                android:padding="4dp"/>
+
+            <TextView
+                android:id="@+id/txt_school_book"
+                android:layout_width="300dp"
+                android:layout_height="wrap_content"
+                android:text=""
+                android:textSize="12sp"
+                android:padding="4dp"/>
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <TextView
+                android:layout_width="50dp"
+                android:layout_height="wrap_content"
+                android:text="Area : "
+                android:textStyle="bold|italic"
+                android:textSize="12sp"
+                android:padding="4dp"/>
+
+            <TextView
+                android:id="@+id/txt_school_area"
+                android:layout_width="126dp"
+                android:layout_height="wrap_content"
+                android:text=""
+                android:textSize="12sp"
+                android:padding="4dp"/>
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Branch : "
+                    android:textStyle="bold|italic"
+                    android:textSize="12sp"
+                    android:padding="4dp"/>
+
+                <TextView
+                    android:id="@+id/txt_school_branch"
+                    android:layout_width="126dp"
+                    android:layout_height="wrap_content"
+                    android:padding="4dp"
+                    android:text=""
+                    android:textSize="12sp" />
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <TextView
+                android:layout_width="50dp"
+                android:layout_height="wrap_content"
+                android:text="State : "
+                android:textStyle="bold|italic"
+                android:textSize="12sp"
+                android:padding="4dp"/>
+
+            <TextView
+                android:id="@+id/txt_school_state"
+                android:layout_width="126dp"
+                android:layout_height="wrap_content"
+                android:text=""
+                android:textSize="12sp"
+                android:padding="4dp"/>
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Country : "
+                    android:textStyle="bold|italic"
+                    android:textSize="12sp"
+                    android:padding="4dp"/>
+
+                <TextView
+                    android:id="@+id/txt_school_country"
+                    android:layout_width="126dp"
+                    android:layout_height="wrap_content"
+                    android:text=""
+                    android:textSize="12sp"
+                    android:padding="4dp"/>
+
+            </LinearLayout>
+
+        </LinearLayout>
+    </LinearLayout>
+</LinearLayout>

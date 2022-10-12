@@ -1,0 +1,16 @@
+<resources>
+    <string name="app_name">BookApp</string>
+    <string name="todo">TODO</string>
+
+    <array name="school_board">
+        <item>Select Board</item>
+        <item>CBSC</item>
+        <item>Nashik Board</item>
+    </array>
+
+    <array name="school_book">
+        <item>Select Book</item>
+        <item>NCRT</item>
+        <item>o</item>
+    </array>
+</resources>
