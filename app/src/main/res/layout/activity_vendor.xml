@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/light_grey"
+    android:gravity="center"
+    tools:context=".vendor.VendorActivity"
+    android:orientation="vertical">
+
+
+    <LinearLayout
+        android:id="@+id/layout_book_vendor"
+        android:layout_width="195dp"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_margin="12dp"
+        android:layout_marginTop="144dp"
+        android:background="@drawable/layout_bg"
+        android:gravity="center"
+        android:orientation="vertical"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <ImageView
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:layout_margin="32dp"
+            android:layout_marginTop="30dp"
+            android:src="@drawable/e_book" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/layout_uniform_vendor"
+        android:layout_width="195dp"
+        android:layout_height="wrap_content"
+        android:layout_margin="12dp"
+        android:layout_gravity="center"
+        android:background="@drawable/layout_bg"
+        android:gravity="center"
+        android:orientation="vertical"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/layout_book_vendor">
+
+        <ImageView
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:layout_margin="32dp"
+            android:layout_marginTop="30dp"
+            android:src="@drawable/uniform" />
+
+    </LinearLayout>
+
+</LinearLayout>

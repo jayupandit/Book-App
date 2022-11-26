@@ -10,7 +10,9 @@ import android.provider.Settings;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.Toast;
 
+import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 
@@ -18,6 +20,7 @@ public class SetNewPassword extends AppCompatActivity {
 
     private EditText edtNewPass,edtNewConfPass;
     private Button btnUpdate;
+    String phone;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -27,6 +30,8 @@ public class SetNewPassword extends AppCompatActivity {
         edtNewPass = findViewById(R.id.edt_new_pass);
         edtNewConfPass = findViewById(R.id.edt_conf_new_pass);
         btnUpdate = findViewById(R.id.update);
+
+        phone = getIntent().getStringExtra("mobile");
 
         btnUpdate.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -54,13 +59,14 @@ public class SetNewPassword extends AppCompatActivity {
 
         // Get data from field
         String _newPass = edtNewPass.getText().toString().trim();
-        String _phoneNumber = getIntent().getStringExtra("phoneNo");
 
         //update Data in Firebase and in session
         DatabaseReference reference = FirebaseDatabase.getInstance().getReference("User");
-        reference.child(_phoneNumber).child("password").setValue(_newPass);
+        reference.child(phone).child("password").setValue(_newPass);
 
-        startActivity(new Intent(getApplicationContext(),Enrollment.class));
+        Intent i = new Intent(SetNewPassword.this,Enrollment.class);
+        startActivity(i);
+        finish();
     }
 
     private void showCustomDialog() {

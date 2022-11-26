@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/light_grey"
-    tools:context=".SchoolDetailActivity">
+    tools:context=".school.SchoolDetailActivity">
 
     <TextView
         android:id="@+id/textView6"
@@ -14,7 +14,7 @@
         android:layout_marginTop="22dp"
         android:gravity="center"
         android:text="School Enrollment"
-        android:textColor="@color/black"
+        android:textColor="@color/white"
         android:textSize="32sp"
         android:textStyle="bold|italic"
         app:layout_constraintTop_toTopOf="parent"/>
@@ -42,6 +42,9 @@
             android:layout_marginRight="12dp"
             android:inputType="text"
             android:maxLines="1"
+            android:drawableLeft="@drawable/ic_board"
+            android:drawablePadding="12dp"
+            android:drawableTint="@color/light_grey"
             android:background="@drawable/edit_text_bg"
             android:hint="School Name"
             android:paddingLeft="12dp"
@@ -55,8 +58,26 @@
             android:layout_marginLeft="12dp"
             android:layout_marginTop="12dp"
             android:layout_marginRight="12dp"
-            android:padding="12dp"
+            android:background="@drawable/style_spinner"
+            android:paddingLeft="12dp"
+            android:paddingTop="12dp"
+            android:paddingBottom="12dp"
+            android:paddingRight="12dp"
             android:entries="@array/school_board" />
+
+        <Spinner
+            android:id="@+id/school_spinner_medium"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="12dp"
+            android:layout_marginLeft="12dp"
+            android:layout_marginRight="12dp"
+            android:background="@drawable/style_spinner"
+            android:entries="@array/school_medium"
+            android:paddingLeft="12dp"
+            android:paddingTop="12dp"
+            android:paddingRight="12dp"
+            android:paddingBottom="12dp"/>
 
         <Spinner
             android:id="@+id/school_spinner_book"
@@ -65,8 +86,12 @@
             android:layout_marginLeft="12dp"
             android:layout_marginTop="12dp"
             android:layout_marginRight="12dp"
+            android:background="@drawable/style_spinner"
             android:entries="@array/school_book"
-            android:padding="12dp" />
+            android:paddingLeft="12dp"
+            android:paddingTop="12dp"
+            android:paddingBottom="12dp"
+            android:paddingRight="12dp"/>
 
         <EditText
             android:id="@+id/school_area"
@@ -77,6 +102,9 @@
             android:layout_marginRight="12dp"
             android:inputType="text"
             android:maxLines="1"
+            android:drawableLeft="@drawable/ic_area"
+            android:drawablePadding="8dp"
+            android:drawableTint="@color/light_grey"
             android:background="@drawable/edit_text_bg"
             android:hint="Area"
             android:paddingLeft="12dp"
@@ -92,6 +120,9 @@
             android:layout_marginRight="12dp"
             android:inputType="text"
             android:maxLines="1"
+            android:drawableLeft="@drawable/ic_branch"
+            android:drawablePadding="12dp"
+            android:drawableTint="@color/light_grey"
             android:background="@drawable/edit_text_bg"
             android:hint="Branch"
             android:paddingLeft="12dp"
@@ -107,6 +138,9 @@
             android:layout_marginRight="12dp"
             android:inputType="text"
             android:maxLines="1"
+            android:drawableLeft="@drawable/ic_area"
+            android:drawablePadding="12dp"
+            android:drawableTint="@color/light_grey"
             android:background="@drawable/edit_text_bg"
             android:hint="State"
             android:paddingLeft="12dp"
@@ -123,6 +157,9 @@
             android:layout_marginBottom="32dp"
             android:inputType="text"
             android:maxLines="1"
+            android:drawableLeft="@drawable/ic_branch"
+            android:drawablePadding="12dp"
+            android:drawableTint="@color/light_grey"
             android:background="@drawable/edit_text_bg"
             android:hint="Country"
             android:paddingLeft="12dp"
@@ -134,6 +171,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="save"
+            android:textColor="@color/white"
             android:background="@drawable/button_bg"
             android:layout_marginLeft="32dp"
             android:layout_marginRight="32dp"

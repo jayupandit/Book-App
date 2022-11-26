@@ -3,6 +3,7 @@ package com.jaypandit.bookapp;
 import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.provider.Settings;
 import android.text.method.HideReturnsTransformationMethod;
@@ -14,6 +15,7 @@ import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ProgressBar;
+import android.widget.Switch;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -25,13 +27,13 @@ import androidx.fragment.app.Fragment;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.AuthResult;
-import com.google.firebase.auth.EmailAuthProvider;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.Query;
 import com.google.firebase.database.ValueEventListener;
+import com.jaypandit.bookapp.client.ClientActivity;
 
 public class LoginTabFragment extends Fragment {
 
@@ -41,6 +43,10 @@ public class LoginTabFragment extends Fragment {
     ProgressBar progressBar;
     String emailpattern = "[a-zA-Z0-9._-]+@[a-z]+\\.+[a-z]+";
     boolean passVisible;
+    String mobile;
+    int switchType;
+
+    private Switch active;
 //    float v=0;
 
     FirebaseAuth mAuth;
@@ -55,6 +61,7 @@ public class LoginTabFragment extends Fragment {
         txtFrgPass = view.findViewById(R.id.frg_pass);
         btnLogin = view.findViewById(R.id.btn_login);
         progressBar = view.findViewById(R.id.progressBarLogin);
+        active = view.findViewById(R.id.swt);
 
         mAuth = FirebaseAuth.getInstance();
 
@@ -86,6 +93,20 @@ public class LoginTabFragment extends Fragment {
             }
         });
 
+        final SharedPreferences preferences = getActivity().getSharedPreferences("Data",Context.MODE_PRIVATE);
+        final String type = preferences.getString("Email","");
+        String as = preferences.getString("as","");
+        if (type.isEmpty()){
+            Toast.makeText(getActivity(), "Please Login", Toast.LENGTH_SHORT).show();
+        }else if (as.equals("Admin")) {
+                Intent i = new Intent(getActivity(), Enrollment.class);
+                startActivity(i);
+        } else if (as.equals("user")){
+                Intent i = new Intent(getActivity(), ClientActivity.class);
+                startActivity(i);
+        }
+
+
         btnLogin.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -93,6 +114,7 @@ public class LoginTabFragment extends Fragment {
                 CheckInternet internet = new CheckInternet();
                 String email = edtEmail.getText().toString().trim();
                 String password = edtPass.getText().toString().trim();
+
 
                 if (!internet.isConnected(getContext())) {
                     showCustomDialog(getContext());
@@ -116,9 +138,54 @@ public class LoginTabFragment extends Fragment {
 
                                     if (task.isSuccessful()){
 
+                                        Query check = FirebaseDatabase.getInstance().getReference("User").orderByChild("email").equalTo(email);
+                                        check.addListenerForSingleValueEvent(new ValueEventListener() {
+                                            @Override
+                                            public void onDataChange(@NonNull DataSnapshot snapshot) {
+                                                for (DataSnapshot dataSnapshot : snapshot.getChildren()){
+                                                    mobile = dataSnapshot.child("mobile").getValue(String.class);
+                                                }
+
+                                                Toast.makeText(getActivity(), mobile+"", Toast.LENGTH_SHORT).show();
+
+                                                if(snapshot.child(mobile).exists()) {
+                                                    if (active.isChecked()) {
+                                                        if (snapshot.child(mobile).child("as").getValue(String.class).equals("Admin")) {
+                                                            SharedPreferences.Editor editor = preferences.edit();
+                                                            editor.putString("as","Admin");
+                                                            editor.putString("Email",email);
+                                                            editor.putString("Password",password);
+                                                            editor.putString("mobile",mobile);
+                                                            editor.commit();
+                                                            Intent i = new Intent(getActivity(), Enrollment.class);
+                                                            i.putExtra("mobile", mobile);
+                                                            startActivity(i);
+                                                        } else {
+                                                            progressBar.setVisibility(View.GONE);
+                                                            btnLogin.setVisibility(View.VISIBLE);
+                                                            Toast.makeText(getActivity(), "You are not admin", Toast.LENGTH_SHORT).show();
+                                                        }
+                                                    } else {
+                                                        SharedPreferences.Editor editor = preferences.edit();
+                                                        editor.putString("as","user");
+                                                        editor.putString("Email",email);
+                                                        editor.putString("Password",password);
+                                                        editor.putString("mobile",mobile);
+                                                        editor.commit();
+                                                        Intent i = new Intent(getActivity(), ClientActivity.class);
+                                                        startActivity(i);
+                                                    }
+                                                }
+
+                                            }
+
+                                            @Override
+                                            public void onCancelled(@NonNull DatabaseError error) {
+
+                                            }
+                                        });
                                         Toast.makeText(getActivity(), "Log In Successful", Toast.LENGTH_SHORT).show();
-                                        Intent i = new Intent(getActivity(),Enrollment.class);
-                                        startActivity(i);
+
                                     } else {
                                         progressBar.setVisibility(View.INVISIBLE);
                                         btnLogin.setVisibility(View.VISIBLE);
@@ -128,6 +195,8 @@ public class LoginTabFragment extends Fragment {
                             });
 
                 }
+
+
             }
         });
 
@@ -141,7 +210,15 @@ public class LoginTabFragment extends Fragment {
         return view;
     }
 
-//    public void letTheUserLogin(){
+
+    @Override
+    public void onResume() {
+        super.onResume();
+        progressBar.setVisibility(View.GONE);
+        btnLogin.setVisibility(View.VISIBLE);
+    }
+
+    //    public void letTheUserLogin(){
 //
 //        if (!validateField()){
 //            return;

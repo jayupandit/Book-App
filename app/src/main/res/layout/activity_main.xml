@@ -6,12 +6,12 @@
     android:layout_height="match_parent"
     tools:context=".MainActivity">
 
-    <ImageView
+    <View
         android:id="@+id/imageView"
         android:layout_width="wrap_content"
         android:layout_height="0dp"
         android:scaleType="centerCrop"
-        android:src="@drawable/light_grey_bg_1"
+        android:background="@color/light_grey"
         app:layout_constraintHeight_percent=".27"
         app:layout_constraintVertical_bias="0"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -112,7 +112,9 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Welcome TO Be Book"
-        android:textColor="@color/black"
+        android:textColor="@color/white"
+        android:textStyle="bold|italic"
+        android:textSize="@dimen/_16sdp"
         app:layout_constraintVertical_bias=".2"
         app:layout_constraintBottom_toTopOf="@id/constraintLayout"
         app:layout_constraintEnd_toEndOf="parent"

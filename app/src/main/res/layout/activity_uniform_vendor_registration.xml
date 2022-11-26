@@ -1,0 +1,224 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/light_grey"
+    tools:context=".vendor.UniformVendorRegistration">
+
+    <TextView
+        android:id="@+id/textView6"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="22dp"
+        android:gravity="center"
+        android:text="Uniform Vendor Registration"
+        android:textColor="@color/white"
+        android:textSize="26sp"
+        android:padding="16dp"
+        android:textStyle="bold|italic"/>
+
+    <ScrollView
+        android:id="@+id/book_vendor_scroll_view"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/textView6"
+        android:layout_marginStart="22dp"
+        android:layout_marginTop="22dp"
+        android:layout_marginEnd="22dp"
+        android:layout_marginBottom="22dp"
+        android:background="@drawable/layout_bg">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+
+            <TextView
+                android:layout_width="150dp"
+                android:layout_height="wrap_content"
+                android:text="Full Name :"
+                android:textColor="@color/black"
+                android:layout_marginStart="12dp"
+                android:layout_marginTop="12dp"
+                android:textSize="16sp"
+                android:padding="4dp"
+                android:textStyle="bold"/>
+
+            <EditText
+                android:id="@+id/uniform_full_name"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Full Name"
+                android:layout_marginLeft="12dp"
+                android:layout_marginRight="12dp"
+                android:inputType="text"
+                android:maxLines="1"
+                android:padding="12dp" />
+
+                <TextView
+                    android:layout_width="150dp"
+                    android:layout_height="wrap_content"
+                    android:text="Shop Name :"
+                    android:textColor="@color/black"
+                    android:layout_marginStart="12dp"
+                    android:textSize="16sp"
+                    android:padding="4dp"
+                    android:textStyle="bold" />
+
+                <EditText
+                    android:id="@+id/uniform_shop_name"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="Shop Name"
+                    android:layout_marginLeft="12dp"
+                    android:layout_marginRight="12dp"
+                    android:inputType="text"
+                    android:maxLines="1"
+                    android:padding="12dp" />
+
+            <TextView
+                android:layout_width="150dp"
+                android:layout_height="wrap_content"
+                android:text="Shop Address :"
+                android:textColor="@color/black"
+                android:layout_marginStart="12dp"
+                android:layout_marginTop="12dp"
+                android:textSize="16sp"
+                android:padding="4dp"
+                android:textStyle="bold" />
+
+            <EditText
+                android:id="@+id/uniform_shop_address"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="shop address"
+                android:layout_marginLeft="12dp"
+                android:layout_marginRight="12dp"
+                android:inputType="text"
+                android:maxLines="1"
+                android:padding="12dp" />
+
+
+            <TextView
+                android:layout_width="150dp"
+                android:layout_height="wrap_content"
+                android:text="City :"
+                android:textColor="@color/black"
+                android:layout_marginStart="12dp"
+                android:layout_marginTop="12dp"
+                android:textSize="16dp"
+                android:padding="4dp"
+                android:textStyle="bold" />
+
+            <EditText
+                android:id="@+id/uniform_city"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Full Name"
+                android:layout_marginLeft="12dp"
+                android:layout_marginRight="12dp"
+                android:inputType="text"
+                android:maxLines="1"
+                android:padding="12dp" />
+
+            <TextView
+                android:layout_width="150dp"
+                android:layout_height="wrap_content"
+                android:text="Phone Number :"
+                android:textColor="@color/black"
+                android:layout_marginStart="12dp"
+                android:layout_marginTop="12dp"
+                android:textSize="16sp"
+                android:padding="4dp"
+                android:textStyle="bold"/>
+
+            <EditText
+                android:id="@+id/uniform_mobile_no"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Phone Number"
+                android:layout_marginLeft="12dp"
+                android:layout_marginRight="12dp"
+                android:inputType="number"
+                android:maxLines="1"
+                android:padding="12dp" />
+
+            <TextView
+                android:layout_width="200dp"
+                android:layout_height="wrap_content"
+                android:text="Permanent Phone Number :"
+                android:textColor="@color/black"
+                android:layout_marginStart="12dp"
+                android:layout_marginTop="12dp"
+                android:textSize="15sp"
+                android:padding="4dp"
+                android:textStyle="bold"/>
+
+            <EditText
+                android:id="@+id/uniform_permanent_no"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Full Name"
+                android:layout_marginLeft="12dp"
+                android:layout_marginRight="12dp"
+                android:inputType="number"
+                android:maxLines="1"
+                android:padding="12dp" />
+
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="12dp"
+                android:layout_marginTop="16dp"
+                android:layout_marginRight="12dp"
+                android:text="School :"
+                android:textColor="@color/black"
+                android:textSize="24sp"
+                android:textStyle="bold" />
+
+
+            <LinearLayout
+                android:id="@+id/uniform_layout_list"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="12dp"
+                android:layout_marginTop="22dp"
+                android:layout_marginRight="12dp"
+                android:orientation="vertical"></LinearLayout>
+
+            <Button
+                android:id="@+id/btn_uniform_add"
+                android:layout_width="wrap_content"
+                android:layout_height="40dp"
+                android:layout_marginStart="12dp"
+                android:layout_marginTop="16dp"
+                android:background="@drawable/round_grey"
+                android:backgroundTint="#6476DC"
+                android:drawableEnd="@drawable/ic_add"
+                android:paddingLeft="10dp"
+                android:paddingRight="10dp"
+                android:text="Add"
+                android:textAllCaps="false" />
+
+
+            <Button
+                android:id="@+id/btn_uniform_register"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginTop="40dp"
+                android:layout_marginBottom="32dp"
+                android:background="@drawable/button_bg"
+                android:text="Add" />
+
+
+        </LinearLayout>
+
+    </ScrollView>
+
+
+</RelativeLayout>

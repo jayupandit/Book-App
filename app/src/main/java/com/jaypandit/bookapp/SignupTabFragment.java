@@ -2,6 +2,7 @@ package com.jaypandit.bookapp;
 
 import android.content.Context;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.text.TextUtils;
 import android.text.method.HideReturnsTransformationMethod;
@@ -12,7 +13,9 @@ import android.view.MotionEvent;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
+import android.widget.CompoundButton;
 import android.widget.EditText;
+import android.widget.Switch;
 import android.widget.Toast;
 
 import androidx.annotation.NonNull;
@@ -34,8 +37,10 @@ public class SignupTabFragment extends Fragment {
 
     public static final String TAG = "TAG";
     private EditText edtEmail,edtPass,edtMobileNo,edtConfPass;
+//    private Switch swt;
     private Button btnSignup;
     private Context mContext;
+    int  switchType;
 
     FirebaseFirestore  mStore;
     boolean passVisible;
@@ -56,6 +61,7 @@ public class SignupTabFragment extends Fragment {
        edtPass = view.findViewById(R.id.input_pass);
        edtConfPass = view.findViewById(R.id.input_conf_pass);
        btnSignup = view.findViewById(R.id.btn_sign_up);
+//       swt = view.findViewById(R.id.swt);
 
        mAuth = FirebaseAuth.getInstance();
        mStore = FirebaseFirestore.getInstance();
@@ -94,6 +100,29 @@ public class SignupTabFragment extends Fragment {
             }
         });
 
+//        swt.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
+//            @Override
+//            public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
+//                if (isChecked == true){
+//                    switchType = 1;
+//                    Toast.makeText(mContext, "true", Toast.LENGTH_SHORT).show();
+//                } else if (isChecked == false){
+//                    switchType=0;
+//                    Toast.makeText(mContext, "false", Toast.LENGTH_SHORT).show();
+//                }
+//            }
+//        });
+
+
+        final SharedPreferences preferences = getActivity().getSharedPreferences("Data",Context.MODE_PRIVATE);
+        final String type = preferences.getString("Email","");
+        if (type.isEmpty()){
+            Toast.makeText(getActivity(), "Please Login", Toast.LENGTH_SHORT).show();
+        }else{
+            Intent i = new Intent(getActivity(),Enrollment.class);
+            startActivity(i);
+        }
+
        btnSignup.setOnClickListener(new View.OnClickListener() {
            @Override
            public void onClick(View v) {
@@ -101,6 +130,7 @@ public class SignupTabFragment extends Fragment {
                 final String mobileNo = edtMobileNo.getText().toString();
                 String password = edtPass.getText().toString().trim();
                 String confPassword = edtConfPass.getText().toString().trim();
+
 
                 if (TextUtils.isEmpty(mobileNo)){
                     edtConfPass.setError("Enter Mobile No");
@@ -121,9 +151,9 @@ public class SignupTabFragment extends Fragment {
 
                             if (task.isSuccessful()) {
 
-                                User mUser = new User(email,mobileNo,password);
-                                String id = task.getResult().getUser().getUid();
-                                database.getReference().child("User").child(id).setValue(mUser);
+                                    User mUser = new User(email, mobileNo, password,switchType);
+                                    database.getReference().child("User").child(mobileNo).setValue(mUser);
+
 
                                 FirebaseUser fUser = mAuth.getCurrentUser();
                                 fUser.sendEmailVerification().addOnSuccessListener(new OnSuccessListener<Void>() {
@@ -138,7 +168,12 @@ public class SignupTabFragment extends Fragment {
                                     }
                                 });
 
-                                Toast.makeText(mContext, "User Created", Toast.LENGTH_SHORT).show();
+                                SharedPreferences.Editor editor = preferences.edit();
+                                editor.putString("Email",email);
+                                editor.putString("Password",password);
+                                editor.putString("mobile",mobileNo);
+                                editor.commit();
+                                Toast.makeText(mContext, type+"User Created", Toast.LENGTH_SHORT).show();
 //                                userId = mAuth.getCurrentUser().getUid();
 //                                DocumentReference documentReference = mStore.collection("user").document("mobileNo");
 //                                Map<String, Object> user = new HashMap<>();
@@ -155,8 +190,7 @@ public class SignupTabFragment extends Fragment {
 //                                        Log.d(TAG, "onFailure: " + e.toString());
 //                                    }
 //                                });
-                                Intent i = new Intent(getActivity(), Enrollment.class);
-                                startActivity(i);
+                               startAdmin();
                             } else {
                                 Toast.makeText(getActivity(), "Error" + task.getException().getMessage(), Toast.LENGTH_SHORT).show();
                             }
@@ -169,22 +203,15 @@ public class SignupTabFragment extends Fragment {
 
         return view;
     }
-//        private void PerformAuth() {
-//
-//        String email = edtEmail.getText().toString();
-//        String mobileNo = edtMobileNo.getText().toString();
-//        String pass = edtPass.getText().toString();
-//        String confPass = edtConfPass.getText().toString();
-//
-//        if (){
-////            if (!pass.equals(confPass)) {
-////                inputConfPass.setError("Password Not match Both field");
-////            }else {
-//            Toast.makeText(mContext, "success", Toast.LENGTH_SHORT).show();
-//
-//        } else {
-//            Toast.makeText(mContext, "Enter Credentials", Toast.LENGTH_SHORT).show();
-//        }
 
-//    }
+    public void startAdmin(){
+//        if (switchType == 1){
+            Intent i = new Intent(getActivity(), Enrollment.class);
+            startActivity(i);
+//        } else if (switchType == 0) {
+//            Intent i = new Intent(getActivity(), AdminActivity.class);
+//            startActivity(i);
+//        }
+    }
+
 }

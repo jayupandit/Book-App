@@ -89,9 +89,9 @@ public class EmailOtpVerification extends AppCompatActivity {
 
                 String inputCode = edtOtpEt.getText().toString();
                 if (inputCode.equals(code)){
-                    Toast.makeText(EmailOtpVerification.this, "success", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(EmailOtpVerification.this, "Success", Toast.LENGTH_SHORT).show();
                 } else {
-                    Toast.makeText(EmailOtpVerification.this, "failed", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(EmailOtpVerification.this, "Failed", Toast.LENGTH_SHORT).show();
                 }
             }
 

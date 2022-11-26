@@ -1,68 +1,191 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.drawerlayout.widget.DrawerLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
+    android:id="@+id/drawer_layout"
     android:gravity="center"
     android:background="@color/light_grey"
     android:layout_height="match_parent"
-    tools:context=".Enrollment">
+    tools:context=".Enrollment"
+    android:fitsSystemWindows="true">
 
-    <LinearLayout
-        android:id="@+id/LinearLayout"
+    <com.google.android.material.navigation.NavigationView
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:id="@+id/nav_view"
+        app:headerLayout="@layout/hearder"
+        app:menu="@menu/main_menu"
+        android:layout_gravity="start"/>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="vertical"
-        android:background="@drawable/layout_bg"
-        android:layout_marginRight="70dp"
-        android:layout_marginLeft="70dp"
-        android:gravity="center">
+        android:layout_height="match_parent">
 
-        <ImageView
-            android:layout_width="100dp"
-            android:layout_height="100dp"
-            android:layout_margin="32dp"
-            android:src="@drawable/school"
-            android:layout_marginTop="30dp"/>
+        <androidx.appcompat.widget.Toolbar
+            android:id="@+id/toolbar"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:background="@color/light_grey"
+            android:minHeight="?attr/actionBarSize"
+            android:theme="?attr/actionBarTheme"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:navigationIcon="@drawable/ic_area" />
 
-<!--        <TextView-->
-<!--            android:layout_width="match_parent"-->
-<!--            android:layout_height="wrap_content"-->
-<!--            android:layout_marginTop="22dp"-->
-<!--            android:layout_marginBottom="22dp"-->
-<!--            android:text="School"-->
-<!--            android:textSize="22dp"-->
-<!--            android:gravity="center"/>-->
-    </LinearLayout>
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="22dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/toolbar">
 
-    <LinearLayout
-        android:id="@+id/LinearLayout2"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="vertical"
-        android:background="@drawable/layout_bg"
-        android:layout_below="@id/LinearLayout"
-        android:layout_marginRight="70dp"
-        android:layout_marginLeft="70dp"
-        android:layout_marginTop="70dp"
-        android:gravity="center">
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
 
-        <ImageView
-            android:layout_width="100dp"
-            android:layout_height="100dp"
-            android:layout_margin="32dp"
-            android:src="@drawable/college"
-            android:layout_marginTop="30dp"/>
-
-<!--        <TextView-->
-<!--            android:layout_width="match_parent"-->
-<!--            android:layout_height="wrap_content"-->
-<!--            android:layout_marginTop="22dp"-->
-<!--            android:layout_marginBottom="22dp"-->
-<!--            android:text="college"-->
-<!--            android:textSize="22dp"-->
-<!--            android:gravity="center"/>-->
-    </LinearLayout>
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="20dp"
+                    android:orientation="horizontal">
 
 
-</RelativeLayout>
+                    <LinearLayout
+                        android:id="@+id/LinearLayout"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="12dp"
+                        android:layout_weight="1"
+                        android:background="@drawable/layout_bg"
+                        android:gravity="center"
+                        android:orientation="vertical"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent">
+
+                        <ImageView
+                            android:layout_width="100dp"
+                            android:layout_height="100dp"
+                            android:layout_margin="32dp"
+                            android:layout_marginTop="30dp"
+                            android:src="@drawable/school" />
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:id="@+id/LinearLayout2"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="12dp"
+                        android:layout_weight="1"
+                        android:background="@drawable/layout_bg"
+                        android:gravity="center"
+                        android:orientation="vertical"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@id/LinearLayout">
+
+                        <ImageView
+                            android:layout_width="100dp"
+                            android:layout_height="100dp"
+                            android:layout_margin="32dp"
+                            android:layout_marginTop="30dp"
+                            android:src="@drawable/college" />
+
+                    </LinearLayout>
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="32dp"
+                    android:layout_marginBottom="32dp"
+                    android:orientation="horizontal">
+
+
+                    <LinearLayout
+                        android:id="@+id/LinearLayout3"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="12dp"
+                        android:layout_weight="1"
+                        android:background="@drawable/layout_bg"
+                        android:gravity="center"
+                        android:orientation="vertical"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@id/LinearLayout2">
+
+                        <ImageView
+                            android:layout_width="100dp"
+                            android:layout_height="100dp"
+                            android:layout_margin="32dp"
+                            android:layout_marginTop="30dp"
+                            android:src="@drawable/e_book" />
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:id="@+id/LinearLayout4"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="12dp"
+                        android:layout_marginBottom="70dp"
+                        android:layout_weight="1"
+                        android:background="@drawable/layout_bg"
+                        android:gravity="center"
+                        android:orientation="vertical"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@id/LinearLayout3">
+
+                        <ImageView
+                            android:layout_width="100dp"
+                            android:layout_height="100dp"
+                            android:layout_margin="32dp"
+                            android:layout_marginTop="30dp"
+                            android:src="@drawable/uniform" />
+
+                    </LinearLayout>
+
+                </LinearLayout>
+
+
+                <LinearLayout
+                    android:id="@+id/LinearLayout5"
+                    android:layout_width="175dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="52dp"
+                    android:layout_weight="1"
+                    android:background="@drawable/layout_bg"
+                    android:gravity="center"
+                    android:layout_gravity="center"
+                    android:orientation="vertical"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/LinearLayout2">
+
+                    <ImageView
+                        android:layout_width="100dp"
+                        android:layout_height="100dp"
+                        android:layout_margin="32dp"
+                        android:layout_marginTop="30dp"
+                        android:src="@drawable/vendor" />
+
+                </LinearLayout>
+
+            </LinearLayout>
+
+        </ScrollView>
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+
+</androidx.drawerlayout.widget.DrawerLayout>

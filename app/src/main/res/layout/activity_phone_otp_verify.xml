@@ -55,102 +55,125 @@
             app:layout_constraintStart_toStartOf="@+id/textView4"
             app:layout_constraintTop_toBottomOf="@+id/textView5" />
 
-        <EditText
-            android:id="@+id/etC1"
-            android:layout_width="55dp"
-            android:layout_height="55dp"
-            android:layout_marginTop="45dp"
-            android:layout_marginEnd="3dp"
-            android:background="@drawable/border"
-            android:ems="10"
-            android:gravity="center"
-            android:inputType="phone"
-            android:textSize="20sp"
-            app:layout_constraintEnd_toStartOf="@+id/etC2"
-            app:layout_constraintHorizontal_bias="0.5"
-            app:layout_constraintHorizontal_chainStyle="packed"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/tvMobile" />
-
-        <EditText
-            android:id="@+id/etC2"
-            android:layout_width="55dp"
-            android:layout_height="55dp"
-            android:layout_marginEnd="3dp"
-            android:background="@drawable/border"
-            android:ems="10"
-            android:gravity="center"
-            android:inputType="phone"
-            android:textSize="20sp"
-            app:layout_constraintBottom_toBottomOf="@+id/etC1"
-            app:layout_constraintEnd_toStartOf="@+id/etC3"
-            app:layout_constraintHorizontal_bias="0.5"
-            app:layout_constraintStart_toEndOf="@+id/etC1"
-            app:layout_constraintTop_toTopOf="@+id/etC1" />
-
-        <EditText
-            android:id="@+id/etC3"
-            android:layout_width="55dp"
-            android:layout_height="55dp"
-            android:layout_marginEnd="3dp"
-            android:background="@drawable/border"
-            android:ems="10"
-            android:gravity="center"
-            android:inputType="phone"
-            android:textSize="20sp"
-            app:layout_constraintBottom_toBottomOf="@+id/etC1"
-            app:layout_constraintEnd_toStartOf="@+id/etC4"
-            app:layout_constraintHorizontal_bias="0.5"
-            app:layout_constraintStart_toEndOf="@+id/etC2"
-            app:layout_constraintTop_toTopOf="@+id/etC1" />
-
-        <EditText
-            android:id="@+id/etC4"
-            android:layout_width="55dp"
-            android:layout_height="55dp"
-            android:layout_marginEnd="3dp"
-            android:background="@drawable/border"
-            android:ems="10"
-            android:gravity="center"
-            android:inputType="phone"
-            android:textSize="20sp"
-            app:layout_constraintBottom_toBottomOf="@+id/etC1"
-            app:layout_constraintEnd_toStartOf="@+id/etC5"
-            app:layout_constraintHorizontal_bias="0.5"
-            app:layout_constraintStart_toEndOf="@+id/etC3"
-            app:layout_constraintTop_toTopOf="@+id/etC1" />
-
-        <EditText
-            android:id="@+id/etC5"
-            android:layout_width="55dp"
-            android:layout_height="55dp"
-            android:layout_marginEnd="3dp"
-            android:background="@drawable/border"
-            android:ems="10"
-            android:gravity="center"
-            android:inputType="phone"
-            android:textSize="20sp"
-            app:layout_constraintBottom_toBottomOf="@+id/etC1"
-            app:layout_constraintEnd_toStartOf="@+id/etC6"
-            app:layout_constraintHorizontal_bias="0.5"
-            app:layout_constraintStart_toEndOf="@+id/etC4"
-            app:layout_constraintTop_toTopOf="@+id/etC1" />
-
-        <EditText
-            android:id="@+id/etC6"
-            android:layout_width="55dp"
-            android:layout_height="55dp"
-            android:background="@drawable/border"
-            android:ems="10"
-            android:gravity="center"
-            android:inputType="phone"
-            android:textSize="20sp"
-            app:layout_constraintBottom_toBottomOf="@+id/etC1"
+        <com.chaos.view.PinView
+            android:id="@+id/pinview"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:itemCount="6"
+            app:itemWidth="50dp"
+            app:itemHeight="50dp"
+            app:lineColor="@color/light_grey"
+            android:itemBackground="@drawable/border"
+            style="@style/PinWidget.PinView"
+            android:inputType="number"
+            android:cursorVisible="true"
+            app:cursorColor="@color/black"
+            app:hideLineWhenFilled="false"
+            app:itemRadius="5dp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.5"
-            app:layout_constraintStart_toEndOf="@+id/etC5"
-            app:layout_constraintTop_toTopOf="@+id/etC1"
-            app:layout_constraintVertical_bias="0.0" />
+            app:layout_constraintVertical_bias="0.1"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/tvMobile"
+            />
+
+<!--        <EditText-->
+<!--            android:id="@+id/etC1"-->
+<!--            android:layout_width="55dp"-->
+<!--            android:layout_height="55dp"-->
+<!--            android:layout_marginTop="45dp"-->
+<!--            android:layout_marginEnd="3dp"-->
+<!--            android:background="@drawable/border"-->
+<!--            android:ems="10"-->
+<!--            android:gravity="center"-->
+<!--            android:inputType="phone"-->
+<!--            android:textSize="20sp"-->
+<!--            app:layout_constraintEnd_toStartOf="@+id/etC2"-->
+<!--            app:layout_constraintHorizontal_bias="0.5"-->
+<!--            app:layout_constraintHorizontal_chainStyle="packed"-->
+<!--            app:layout_constraintStart_toStartOf="parent"-->
+<!--            app:layout_constraintTop_toBottomOf="@+id/pinview" />-->
+
+<!--        <EditText-->
+<!--            android:id="@+id/etC2"-->
+<!--            android:layout_width="55dp"-->
+<!--            android:layout_height="55dp"-->
+<!--            android:layout_marginEnd="3dp"-->
+<!--            android:background="@drawable/border"-->
+<!--            android:ems="10"-->
+<!--            android:gravity="center"-->
+<!--            android:inputType="phone"-->
+<!--            android:textSize="20sp"-->
+<!--            app:layout_constraintBottom_toBottomOf="@+id/etC1"-->
+<!--            app:layout_constraintEnd_toStartOf="@+id/etC3"-->
+<!--            app:layout_constraintHorizontal_bias="0.5"-->
+<!--            app:layout_constraintStart_toEndOf="@+id/etC1"-->
+<!--            app:layout_constraintTop_toTopOf="@+id/etC1" />-->
+
+<!--        <EditText-->
+<!--            android:id="@+id/etC3"-->
+<!--            android:layout_width="55dp"-->
+<!--            android:layout_height="55dp"-->
+<!--            android:layout_marginEnd="3dp"-->
+<!--            android:background="@drawable/border"-->
+<!--            android:ems="10"-->
+<!--            android:gravity="center"-->
+<!--            android:inputType="phone"-->
+<!--            android:textSize="20sp"-->
+<!--            app:layout_constraintBottom_toBottomOf="@+id/etC1"-->
+<!--            app:layout_constraintEnd_toStartOf="@+id/etC4"-->
+<!--            app:layout_constraintHorizontal_bias="0.5"-->
+<!--            app:layout_constraintStart_toEndOf="@+id/etC2"-->
+<!--            app:layout_constraintTop_toTopOf="@+id/etC1" />-->
+
+<!--        <EditText-->
+<!--            android:id="@+id/etC4"-->
+<!--            android:layout_width="55dp"-->
+<!--            android:layout_height="55dp"-->
+<!--            android:layout_marginEnd="3dp"-->
+<!--            android:background="@drawable/border"-->
+<!--            android:ems="10"-->
+<!--            android:gravity="center"-->
+<!--            android:inputType="phone"-->
+<!--            android:textSize="20sp"-->
+<!--            app:layout_constraintBottom_toBottomOf="@+id/etC1"-->
+<!--            app:layout_constraintEnd_toStartOf="@+id/etC5"-->
+<!--            app:layout_constraintHorizontal_bias="0.5"-->
+<!--            app:layout_constraintStart_toEndOf="@+id/etC3"-->
+<!--            app:layout_constraintTop_toTopOf="@+id/etC1" />-->
+
+<!--        <EditText-->
+<!--            android:id="@+id/etC5"-->
+<!--            android:layout_width="55dp"-->
+<!--            android:layout_height="55dp"-->
+<!--            android:layout_marginEnd="3dp"-->
+<!--            android:background="@drawable/border"-->
+<!--            android:ems="10"-->
+<!--            android:gravity="center"-->
+<!--            android:inputType="phone"-->
+<!--            android:textSize="20sp"-->
+<!--            app:layout_constraintBottom_toBottomOf="@+id/etC1"-->
+<!--            app:layout_constraintEnd_toStartOf="@+id/etC6"-->
+<!--            app:layout_constraintHorizontal_bias="0.5"-->
+<!--            app:layout_constraintStart_toEndOf="@+id/etC4"-->
+<!--            app:layout_constraintTop_toTopOf="@+id/etC1" />-->
+
+<!--        <EditText-->
+<!--            android:id="@+id/etC6"-->
+<!--            android:layout_width="55dp"-->
+<!--            android:layout_height="55dp"-->
+<!--            android:background="@drawable/border"-->
+<!--            android:ems="10"-->
+<!--            android:gravity="center"-->
+<!--            android:inputType="phone"-->
+<!--            android:textSize="20sp"-->
+<!--            app:layout_constraintBottom_toBottomOf="@+id/etC1"-->
+<!--            app:layout_constraintEnd_toEndOf="parent"-->
+<!--            app:layout_constraintHorizontal_bias="0.5"-->
+<!--            app:layout_constraintStart_toEndOf="@+id/etC5"-->
+<!--            app:layout_constraintTop_toTopOf="@+id/etC1"-->
+<!--            app:layout_constraintVertical_bias="0.0" />-->
 
         <TextView
             android:id="@+id/textView7"
@@ -162,7 +185,7 @@
             app:layout_constraintHorizontal_bias="0.5"
             app:layout_constraintHorizontal_chainStyle="packed"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/etC6" />
+            app:layout_constraintTop_toBottomOf="@+id/pinview" />
 
         <TextView
             android:id="@+id/tvResendBtn"

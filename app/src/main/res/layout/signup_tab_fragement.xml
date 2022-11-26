@@ -4,6 +4,7 @@
     android:layout_height="match_parent"
     xmlns:app="http://schemas.android.com/apk/res-auto">
 
+
     <EditText
         android:id="@+id/input_email"
         android:layout_width="0dp"
@@ -13,7 +14,9 @@
         android:hint="Email"
         android:inputType="textEmailAddress"
         android:maxLines="1"
-        android:paddingLeft="@dimen/_20sdp"
+        android:drawableLeft="@drawable/ic_email"
+        android:drawablePadding="@dimen/_12sdp"
+        android:paddingLeft="@dimen/_12sdp"
         android:paddingTop="@dimen/_10sdp"
         android:paddingBottom="@dimen/_10sdp"
         android:textSize="@dimen/_16sdp"
@@ -32,7 +35,9 @@
         android:ems="10"
         android:hint="1234567890"
         android:inputType="phone"
-        android:paddingLeft="@dimen/_20sdp"
+        android:drawableLeft="@drawable/ic_phone"
+        android:drawablePadding="@dimen/_12sdp"
+        android:paddingLeft="@dimen/_12sdp"
         android:paddingTop="@dimen/_10sdp"
         android:paddingBottom="@dimen/_10sdp"
         android:textSize="@dimen/_16sdp"
@@ -51,11 +56,13 @@
         android:ems="6"
         android:hint="Password"
         android:inputType="textPassword"
-        android:paddingLeft="@dimen/_20sdp"
+        android:paddingLeft="@dimen/_12sdp"
         android:paddingTop="@dimen/_10sdp"
         android:paddingBottom="@dimen/_10sdp"
         android:paddingRight="@dimen/_10sdp"
         android:drawableRight="@drawable/ic_hide_pass"
+        android:drawableLeft="@drawable/ic_lock"
+        android:drawablePadding="@dimen/_12sdp"
         android:textSize="@dimen/_16sdp"
         android:longClickable="false"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -74,10 +81,12 @@
         android:ems="6"
         android:hint="Confirm Password"
         android:inputType="textPassword"
-        android:paddingLeft="@dimen/_20sdp"
+        android:paddingLeft="@dimen/_12sdp"
         android:paddingTop="@dimen/_10sdp"
         android:paddingBottom="@dimen/_10sdp"
         android:textSize="@dimen/_16sdp"
+        android:drawableLeft="@drawable/ic_lock"
+        android:drawablePadding="@dimen/_12sdp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias=".5"
@@ -86,6 +95,7 @@
         app:layout_constraintVertical_bias="0.04"
         app:layout_constraintWidth_percent=".8" />
 
+
     <Button
         android:id="@+id/btn_sign_up"
         android:layout_width="0dp"
@@ -93,7 +103,7 @@
         android:layout_marginTop="@dimen/_20sdp"
         android:background="@drawable/button_bg"
         android:text="Signup"
-        android:textColor="@color/black"
+        android:textColor="@color/white"
         android:textSize="@dimen/_16sdp"
         android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="parent"
