@@ -34,6 +34,7 @@ import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.Query;
 import com.google.firebase.database.ValueEventListener;
 import com.jaypandit.bookapp.client.ClientActivity;
+import com.jaypandit.bookapp.master.BookSellActivity;
 
 public class LoginTabFragment extends Fragment {
 
@@ -41,7 +42,7 @@ public class LoginTabFragment extends Fragment {
     TextView txtFrgPass;
     Button btnLogin;
     ProgressBar progressBar;
-    String emailpattern = "[a-zA-Z0-9._-]+@[a-z]+\\.+[a-z]+";
+    String emailPattern = "[a-zA-Z0-9._-]+@[a-z]+\\.+[a-z]+";
     boolean passVisible;
     String mobile;
     int switchType;
@@ -102,7 +103,7 @@ public class LoginTabFragment extends Fragment {
                 Intent i = new Intent(getActivity(), Enrollment.class);
                 startActivity(i);
         } else if (as.equals("user")){
-                Intent i = new Intent(getActivity(), ClientActivity.class);
+                Intent i = new Intent(getActivity(), BookSellActivity.class);
                 startActivity(i);
         }
 
@@ -120,7 +121,7 @@ public class LoginTabFragment extends Fragment {
                     showCustomDialog(getContext());
                     Toast.makeText(getContext(), "Internet Not Connect", Toast.LENGTH_SHORT).show();
                     return;
-                }else if (!email.matches(emailpattern)){
+                }else if (!email.matches(emailPattern)){
                     edtEmail.setError("Enter Connext Email");
                     return;
 
@@ -172,7 +173,7 @@ public class LoginTabFragment extends Fragment {
                                                         editor.putString("Password",password);
                                                         editor.putString("mobile",mobile);
                                                         editor.commit();
-                                                        Intent i = new Intent(getActivity(), ClientActivity.class);
+                                                        Intent i = new Intent(getActivity(), BookSellActivity.class);
                                                         startActivity(i);
                                                     }
                                                 }

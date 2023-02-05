@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".master.CartAddressActivity">
+
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/cart_address_toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:title="CART"
+        android:background="@color/white"
+        android:minHeight="?attr/actionBarSize"
+        android:theme="?attr/actionBarTheme"
+        app:navigationIcon="@drawable/ic_back"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"/>
+
+    <include
+        android:id="@+id/include"
+        layout="@layout/item_step_view"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/cart_address_toolbar"
+        app:layout_constraintTop_toBottomOf="@+id/cart_address_toolbar"/>
+
+    <TextView
+        android:id="@+id/add_new_address"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:drawableLeft="@drawable/ic_add"
+        android:text="ADD NEW ADDRESS"
+        android:textColor="#9846AF"
+        android:textSize="20sp"
+        android:layout_below="@id/include"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/include" />
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/cart_address_list_view"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+    </androidx.recyclerview.widget.RecyclerView>
+
+
+
+
+</LinearLayout>

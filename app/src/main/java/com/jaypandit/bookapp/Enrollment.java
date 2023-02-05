@@ -4,6 +4,7 @@ import androidx.annotation.NonNull;
 import androidx.appcompat.app.ActionBarDrawerToggle;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
+import androidx.cardview.widget.CardView;
 import androidx.core.view.GravityCompat;
 import androidx.drawerlayout.widget.DrawerLayout;
 
@@ -33,7 +34,7 @@ import de.hdodenhof.circleimageview.CircleImageView;
 
 public class Enrollment extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener {
 
-    LinearLayout lineLayout,lineLayout2,linearLayout3,linearLayout4,linearLayout5;
+    CardView lineLayout,lineLayout2,linearLayout3,linearLayout4,linearLayout5;
     private DrawerLayout drawerLayout;
     NavigationView navigationView;
 
@@ -53,11 +54,11 @@ public class Enrollment extends AppCompatActivity implements NavigationView.OnNa
 
 
         //hooks
-        lineLayout = findViewById(R.id.LinearLayout);
-        lineLayout2 = findViewById(R.id.LinearLayout2);
-        linearLayout3 = findViewById(R.id.LinearLayout3);
-        linearLayout4 = findViewById(R.id.LinearLayout4);
-        linearLayout5 = findViewById(R.id.LinearLayout5);
+        lineLayout = findViewById(R.id.cv_school_detail);
+        lineLayout2 = findViewById(R.id.cv_college_detail);
+        linearLayout3 = findViewById(R.id.cv_book_detail);
+        linearLayout4 = findViewById(R.id.cv_uniform_detail);
+        linearLayout5 = findViewById(R.id.cv_vendor_detail);
         drawerLayout = findViewById(R.id.drawer_layout);
         navigationView = findViewById(R.id.nav_view);
         toolbar = findViewById(R.id.toolbar);
@@ -146,7 +147,7 @@ public class Enrollment extends AppCompatActivity implements NavigationView.OnNa
                 SharedPreferences.Editor editor = preferences.edit();
                 editor.clear();
                 editor.apply();
-                startActivity(new Intent(this,MainActivity.class));
+                startActivity(new Intent(this,LoginActivity.class));
                 break;
 
             case R.id.nav_home:

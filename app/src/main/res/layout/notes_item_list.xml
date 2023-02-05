@@ -1,0 +1,159 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/notes_bg"
+        android:layout_margin="8dp"
+        android:orientation="vertical">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_marginLeft="32dp"
+            android:layout_marginRight="6dp"
+            android:layout_marginTop="8dp">
+
+            <TextView
+                android:id="@+id/txt_note_set_name"
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:layout_height="wrap_content"
+                android:padding="6dp"
+                android:gravity="center"
+                android:text="Book Set Name"
+                android:textAllCaps="true"
+                android:textColor="#3A3CCF"
+                android:textStyle="bold|italic"
+                android:textSize="20dp" />
+
+            <ImageView
+                android:id="@+id/img_notes_add_card_yes"
+                android:layout_width="32dp"
+                android:layout_height="36dp"
+                android:src="@drawable/ic_add"/>
+
+            <ImageView
+                android:id="@+id/img_notes_add_card_no"
+                android:layout_width="32dp"
+                android:layout_height="36dp"
+                android:visibility="gone"
+                android:src="@drawable/ic_task"/>
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_marginLeft="22dp">
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:padding="6dp"
+                android:text="School Name :"
+                android:gravity="center"
+                android:textColor="@color/black"
+                android:textStyle="bold"
+                android:textSize="12dp" />
+
+            <TextView
+                android:id="@+id/txt_note_school_name"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="2"
+                android:drawablePadding="12dp"
+                android:padding="6dp"
+                android:text="School Name "
+                android:textStyle="bold"
+                android:textColor="#DC0C0C"
+                android:textSize="12dp" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:layout_marginLeft="22dp"
+            android:layout_marginRight="12dp"
+            android:orientation="horizontal">
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:layout_height="wrap_content"
+                android:text="Class :"
+                android:textSize="12sp"
+                android:textColor="@color/black"
+                android:textStyle="bold"
+                android:padding="4dp"/>
+
+            <TextView
+                android:id="@+id/txt_note_sell_class"
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:layout_height="wrap_content"
+                android:text="class"
+                android:textStyle="bold"
+                android:textColor="#DC0C0C"
+                android:textSize="12sp"/>
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:text="Total Note :"
+                android:textColor="@color/black"
+                android:textSize="12sp"
+                android:textStyle="bold"
+                android:layout_height="wrap_content"/>
+
+            <TextView
+                android:id="@+id/txt_total_note"
+                android:layout_width="0dp"
+                android:layout_weight="2"
+                android:layout_height="wrap_content"
+                android:text="Total Book"
+                android:textStyle="bold"
+                android:textColor="#DC0C0C"
+                android:textSize="12sp"/>
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:layout_marginLeft="22dp"
+            android:layout_marginRight="12dp"
+            android:layout_marginBottom="22dp">
+
+            <TextView
+                android:layout_width="150dp"
+                android:layout_height="wrap_content"
+                android:text="Total Prize :"
+                android:textStyle="bold"
+                android:textColor="@color/black"
+                android:textSize="16sp"/>
+
+            <TextView
+                android:id="@+id/txt_note_total_prize"
+                android:layout_width="0dp"
+                android:layout_weight="2"
+                android:layout_height="wrap_content"
+                android:text="Total prize"
+                android:textStyle="bold"
+                android:textColor="#DC0C0C"
+                android:textSize="12sp"/>
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+</LinearLayout>

@@ -1,0 +1,116 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".RegisterActivity">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+    <RelativeLayout
+        android:id="@+id/rlHeader"
+        android:layout_width="match_parent"
+        android:layout_height="100dp"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent">
+
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="10dp"
+            android:src="@drawable/bkbk" />
+
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:layout_width="220dp"
+        android:layout_height="520dp"
+        android:background="@drawable/shape_right_panel"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/rlHeader" />
+
+    <LinearLayout
+        android:id="@+id/llLoginPanel"
+        android:layout_marginTop="60dp"
+        android:layout_width="match_parent"
+        android:layout_height="400dp"
+        android:paddingStart="70dp"
+        android:paddingTop="70dp"
+        android:paddingEnd="50dp"
+        android:orientation="vertical"
+        android:background="@drawable/shape_login_panel"
+        app:layout_constraintTop_toBottomOf="@id/rlHeader">
+
+        <EditText
+            android:id="@+id/input_email"
+            android:hint="Email"
+            android:drawableLeft="@drawable/ic_email"
+            android:drawablePadding="4dp"
+            android:layout_width="match_parent"
+            android:layout_height="60dp"/>
+
+        <EditText
+            android:id="@+id/input_mobile_no"
+            android:hint="Phone Number"
+            android:drawableLeft="@drawable/ic_phone"
+            android:drawablePadding="4dp"
+            android:layout_width="match_parent"
+            android:layout_height="60dp"/>
+
+        <EditText
+            android:id="@+id/input_pass"
+            android:hint="Password"
+            android:drawableRight="@drawable/ic_hide_pass"
+            android:drawableLeft="@drawable/ic_lock"
+            android:drawablePadding="4dp"
+            android:layout_width="match_parent"
+            android:layout_height="60dp"/>
+
+        <EditText
+            android:id="@+id/input_conf_pass"
+            android:hint="Confirm Password"
+            android:drawableLeft="@drawable/ic_lock"
+            android:drawablePadding="4dp"
+            android:layout_width="match_parent"
+            android:layout_height="60dp"/>
+
+    </LinearLayout>
+
+    <Button
+        android:id="@+id/btn_sign_up"
+        android:text="Sign UP"
+        android:layout_width="150dp"
+        android:layout_height="50dp"
+        android:layout_marginBottom="5dp"
+        app:layout_constraintBottom_toBottomOf="@id/llLoginPanel"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:background="@drawable/shape_login_button"
+        android:textColor="@color/white"/>
+
+    <TextView
+        android:textSize="20sp"
+        android:layout_marginStart="40dp"
+        android:text="Login"
+        app:layout_constraintLeft_toLeftOf="parent"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toTopOf="@id/llLoginPanel"/>
+
+    <TextView
+        android:textSize="20sp"
+        android:gravity="right"
+        android:layout_marginEnd="40dp"
+        android:textColor="@color/white"
+        android:text="Sign Up"
+        app:layout_constraintRight_toRightOf="parent"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toTopOf="@id/llLoginPanel"/>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</LinearLayout>

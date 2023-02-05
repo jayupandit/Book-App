@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".master.BookBuyActivity">
+
+    <EditText
+        android:id="@+id/search_buy_view"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="school name, class , set name"
+        android:textColorHint="#C0BEBE"
+        android:textColor="@color/white"
+        android:gravity="center_vertical"
+        android:lines="1"
+        android:background="@drawable/search_view_backgaround"
+        android:layout_marginHorizontal="12dp"
+        android:drawableLeft="@drawable/ic_search"
+        android:drawableTint="@color/black"
+        android:layout_marginTop="16dp"
+        android:padding="10dp"
+        android:layout_marginBottom="16dp"/>
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <TextView
+            android:id="@+id/txt_book"
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:layout_weight="1"
+            android:text="Book "
+            android:textSize="26sp"
+            android:textStyle="bold"
+            android:layout_marginRight="5dp"
+            android:layout_marginLeft="10dp"
+            android:paddingLeft="10dp"
+            android:textColor="@color/black"/>
+
+    </LinearLayout>
+
+    <ListView
+        android:id="@+id/book_buy_list_view"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"/>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:orientation="horizontal">
+
+        <TextView
+            android:id="@+id/txt_uniform"
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="5dp"
+            android:layout_weight="1"
+            android:paddingLeft="10dp"
+            android:text="Other Book"
+            android:textColor="@color/black"
+            android:textSize="26sp"
+            android:textStyle="bold" />
+
+    </LinearLayout>
+
+    <ListView
+        android:id="@+id/uni_buy_list_view"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"/>
+
+        </LinearLayout>
+
+    </ScrollView>
+
+</LinearLayout>

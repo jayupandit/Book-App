@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <TextView
+                android:id="@+id/txt_full_name"
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:layout_height="wrap_content"
+                android:text="Name"
+                android:textSize="28sp"
+                android:textColor="@color/black"
+                android:textStyle="bold"
+                android:padding="12dp"/>
+
+            <RadioButton
+                android:id="@+id/radio_btn"
+                android:layout_width="0dp"
+                android:layout_weight="0.12"
+                android:layout_height="wrap_content"
+                android:padding="12dp"
+                android:checked="true"
+                android:visibility="gone"
+                android:layout_gravity="center"/>
+
+        </LinearLayout>
+
+        <TextView
+            android:id="@+id/txt_address"
+            android:layout_width="300dp"
+            android:layout_height="wrap_content"
+            android:text="2, jamner road, matrbhumi, Bhusawal, Maharashtra, 425201"
+            android:padding="12dp"
+            android:textSize="16sp"/>
+
+        <TextView
+            android:id="@+id/txt_phone_no"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="7972071813"
+            android:layout_marginBottom="12dp"
+            android:padding="10dp"
+            android:textSize="16sp"/>
+
+        <TextView
+            android:id="@+id/txt_edit"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="EDIT"
+            android:visibility="gone"
+            android:textColor="@color/purple_700"
+            android:textStyle="bold"
+            android:padding="10dp"
+            android:textSize="16sp"/>
+
+        <Button
+            android:id="@+id/btn_deliver"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Deliver to this Address"
+            android:visibility="gone"
+            android:background="@drawable/iteam_bg"
+            android:backgroundTint="@color/light_grey"
+            android:layout_margin="16dp"/>
+
+    </LinearLayout>
+
+
+</LinearLayout>

@@ -1,0 +1,287 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="@color/light_grey"
+    tools:context=".master.AddNewAddressActivity">
+
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/cart_Add_toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:title="CART"
+        android:background="@color/white"
+        android:minHeight="?attr/actionBarSize"
+        android:theme="?attr/actionBarTheme"
+        app:navigationIcon="@drawable/ic_back"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"/>
+
+    <include
+        android:id="@+id/include"
+        layout="@layout/item_step_view"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toBottomOf="@+id/cart_toolbar"/>
+
+    <ScrollView
+        android:id="@+id/scl_view"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/include">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/white"
+            android:orientation="vertical" >
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@color/white"
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/textView15"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Contact Details"
+                    android:textSize="22sp"
+                    android:textColor="@color/black"
+                    android:textStyle="bold"
+                    android:drawableStart="@drawable/ic_call"
+                    android:drawablePadding="4dp"
+                    android:padding="12dp"/>
+
+                <TextView
+                    android:layout_width="150dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="12dp"
+                    android:layout_marginTop="12dp"
+                    android:padding="4dp"
+                    android:text="Name"
+                    android:textColor="@color/black"
+                    android:textSize="16dp"
+                    android:textStyle="bold" />
+
+                <EditText
+                    android:id="@+id/full_name"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="12dp"
+                    android:layout_marginRight="12dp"
+                    android:hint="Name"
+                    android:inputType="text"
+                    android:maxLines="1"
+                    android:padding="12dp" />
+
+                <TextView
+                    android:layout_width="150dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="12dp"
+                    android:layout_marginTop="12dp"
+                    android:padding="4dp"
+                    android:text="Phone Number"
+                    android:textColor="@color/black"
+                    android:textSize="16sp"
+                    android:textStyle="bold" />
+
+                <EditText
+                    android:id="@+id/edt_phone_no"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="12dp"
+                    android:layout_marginRight="12dp"
+                    android:hint="Phone Number"
+                    android:inputType="number"
+                    android:layout_marginBottom="12dp"
+                    android:maxLines="1"
+                    android:padding="12dp" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:background="@color/white"
+                android:orientation="vertical">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Address"
+                    android:textSize="20sp"
+                    android:textColor="@color/black"
+                    android:textStyle="bold"
+                    android:drawableStart="@drawable/ic_home"
+                    android:drawablePadding="4dp"
+                    android:padding="12dp"/>
+
+                <TextView
+                    android:layout_width="222dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="12dp"
+                    android:layout_marginTop="12dp"
+                    android:padding="4dp"
+                    android:text="House no. / Building Name"
+                    android:textColor="@color/black"
+                    android:textSize="16dp"
+                    android:textStyle="bold" />
+
+                <EditText
+                    android:id="@+id/edt_house_no"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="12dp"
+                    android:layout_marginRight="12dp"
+                    android:hint="House no. / Building Name"
+                    android:inputType="text"
+                    android:maxLines="1"
+                    android:padding="12dp" />
+
+                <TextView
+                    android:layout_width="220dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="12dp"
+                    android:layout_marginTop="12dp"
+                    android:padding="4dp"
+                    android:text="Road Name / Area / Colony"
+                    android:textColor="@color/black"
+                    android:textSize="16sp"
+                    android:textStyle="bold" />
+
+                <EditText
+                    android:id="@+id/edt_colony"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="12dp"
+                    android:layout_marginRight="12dp"
+                    android:hint="Road Name / Area / Colony"
+                    android:inputType="text"
+                    android:maxLines="1"
+                    android:paddingBottom="22dp" />
+
+                <TextView
+                    android:layout_width="100dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="12dp"
+                    android:layout_marginTop="12dp"
+                    android:padding="4dp"
+                    android:text="Pin Code"
+                    android:textColor="@color/black"
+                    android:textSize="16sp"
+                    android:textStyle="bold" />
+
+                <EditText
+                    android:id="@+id/edt_pin_code"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="12dp"
+                    android:layout_marginRight="12dp"
+                    android:hint="Pin Code"
+                    android:inputType="number"
+                    android:maxLines="1"
+                    android:paddingBottom="22dp"/>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+
+                    <LinearLayout
+                        android:layout_width="0dp"
+                        android:layout_weight="1"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical">
+
+                        <TextView
+                            android:layout_width="50dp"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="12dp"
+                            android:layout_marginTop="12dp"
+                            android:padding="4dp"
+                            android:text="City"
+                            android:textColor="@color/black"
+                            android:textSize="16sp"
+                            android:textStyle="bold" />
+
+                        <EditText
+                            android:id="@+id/edt_city"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="12dp"
+                            android:layout_marginRight="12dp"
+                            android:hint="City"
+                            android:inputType="text"
+                            android:maxLines="1"
+                            android:paddingBottom="22dp"/>
+
+                    </LinearLayout>
+
+                    <Spinner
+                        android:id="@+id/spinner_state"
+                        android:layout_width="0dp"
+                        android:layout_weight="1"
+                        android:layout_gravity="center"
+                        android:padding="22dp"
+                        android:entries="@array/State"
+                        android:layout_height="wrap_content"/>
+
+                </LinearLayout>
+
+                <TextView
+                    android:layout_width="210dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="12dp"
+                    android:layout_marginTop="12dp"
+                    android:padding="4dp"
+                    android:text="Nearby Location (optional)"
+                    android:textColor="@color/black"
+                    android:textSize="16sp"
+                    android:textStyle="bold" />
+
+                <EditText
+                    android:id="@+id/edt_nearby_location"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="12dp"
+                    android:layout_marginRight="12dp"
+                    android:hint="Nearby Location (optional)"
+                    android:inputType="text"
+                    android:paddingBottom="22dp"/>
+
+                <TextView
+                    android:layout_width="55dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="336dp"
+                    android:padding="4dp"
+                    android:text="0/100"
+                    android:textSize="16sp"
+                    android:textStyle="bold"
+                    android:layout_marginBottom="12dp"/>
+
+            </LinearLayout>
+
+            <Button
+                android:id="@+id/btn_save_address"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="22dp"
+                android:text="Save Address and Continue"
+                android:background="@drawable/iteam_bg"
+                android:textColor="@color/white"
+                android:backgroundTint="@color/light_grey"/>
+
+        </LinearLayout>
+
+    </ScrollView>
+
+
+</LinearLayout>

@@ -1,0 +1,108 @@
+package com.jaypandit.bookapp.master;
+
+import androidx.annotation.NonNull;
+import androidx.appcompat.app.AppCompatActivity;
+
+import android.content.Intent;
+import android.content.SharedPreferences;
+import android.graphics.drawable.ColorDrawable;
+import android.os.Bundle;
+import android.view.Menu;
+import android.view.MenuInflater;
+import android.view.MenuItem;
+import android.widget.ListView;
+
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.ValueEventListener;
+import com.jaypandit.bookapp.R;
+
+import java.util.ArrayList;
+
+public class RequiredBookActivity extends AppCompatActivity {
+
+    private ListView bookListView, otherListView;
+
+    ArrayList<BookSell> bookReqList, otherBookList;
+
+    DatabaseReference bookDbRef;
+
+    @Override
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_required_book);
+
+        bookListView = findViewById(R.id.req_book_list_view);
+
+        getSupportActionBar().setTitle("Book Required");
+        getSupportActionBar().setBackgroundDrawable(new ColorDrawable(getResources().getColor(R.color.white)));
+    }
+
+    @Override
+    protected void onResume() {
+        super.onResume();
+
+        bookReqList = new ArrayList<>();
+        otherBookList = new ArrayList<>();
+
+        SharedPreferences preferences = getSharedPreferences("Data",MODE_PRIVATE);
+        String phone = preferences.getString("mobile",null);
+
+        bookDbRef = FirebaseDatabase.getInstance().getReference("User").child(phone).child("BookRequired");
+        bookDbRef.addValueEventListener(new ValueEventListener() {
+            @Override
+            public void onDataChange(@NonNull DataSnapshot snapshot) {
+                bookReqList.clear();
+                for (DataSnapshot bookDataSnap : snapshot.getChildren()){
+                    BookSell bookSell = bookDataSnap.getValue(BookSell.class);
+                    bookReqList.add(bookSell);
+                }
+
+                BookRequiredAdapter adapter = new BookRequiredAdapter(RequiredBookActivity.this,bookReqList);
+                bookListView.setAdapter(adapter);
+            }
+
+            @Override
+            public void onCancelled(@NonNull DatabaseError error) {
+
+            }
+        });
+
+        bookDbRef = FirebaseDatabase.getInstance().getReference("User").child(phone).child("BookRequired");
+        bookDbRef.addValueEventListener(new ValueEventListener() {
+            @Override
+            public void onDataChange(@NonNull DataSnapshot snapshot) {
+                otherBookList.clear();
+                for (DataSnapshot bookDataSnap : snapshot.getChildren()){
+                    BookSell bookSell = bookDataSnap.getValue(BookSell.class);
+                    otherBookList.add(bookSell);
+                }
+
+                BookRequiredAdapter adapter = new BookRequiredAdapter(RequiredBookActivity.this,otherBookList);
+                otherListView.setAdapter(adapter);
+            }
+
+            @Override
+            public void onCancelled(@NonNull DatabaseError error) {
+
+            }
+        });
+    }
+
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        MenuInflater menuInflater = getMenuInflater();
+        menuInflater.inflate(R.menu.activity_menu_book_req,menu);
+        return super.onCreateOptionsMenu(menu);
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(@NonNull MenuItem item) {
+        if (item.getItemId() == R.id.action_book_req){
+            startActivity(new Intent(this,BookRequiredDetailActivity.class));
+        }
+        return super.onOptionsItemSelected(item);
+    }
+}

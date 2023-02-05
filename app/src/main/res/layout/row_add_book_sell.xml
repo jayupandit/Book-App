@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="horizontal"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+
+    <EditText
+        android:id="@+id/book_sell_name"
+        android:layout_width="0dp"
+        android:layout_weight="2"
+        android:layout_height="wrap_content"
+        android:hint="Book Name"
+        android:background="@drawable/round_grey"
+        android:layout_margin="12dp"
+        android:padding="8dp"
+        android:textSize="16sp"/>
+
+
+
+    <EditText
+        android:id="@+id/book_sell_prize"
+        android:layout_width="0dp"
+        android:layout_weight="1"
+        android:layout_height="wrap_content"
+        android:hint="Prize"
+        android:background="@drawable/round_grey"
+        android:layout_margin="12dp"
+        android:padding="8dp"
+        android:textSize="16sp"/>
+
+
+</LinearLayout>

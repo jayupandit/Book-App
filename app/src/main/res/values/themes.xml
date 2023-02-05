@@ -11,8 +11,29 @@
         <item name="colorOnSecondary">@color/black</item>
         <!-- Status bar color. -->
         <item name="android:statusBarColor">?attr/colorPrimaryVariant</item>
+        <item name="android:actionOverflowButtonStyle">@style/MyTheme</item>
         <!-- Customize your theme here. -->
 <!--        <item name="windowActionBar">false</item>-->
 <!--        <item name="windowNoTitle">true</item>-->
+
     </style>
+
+    <style name="TextAppearance.AppCompat.Widget.ActionBar.Title" parent="@android:style/TextAppearance">
+        <item name="android:textColor">@color/black</item>
+        <item name="android:textSize">22sp</item>
+        <item name="android:textStyle">bold|italic</item>
+    </style>
+
+    <style name="MyTheme" parent="@android:style/Widget.Holo.ActionButton.Overflow">
+        <item name="android:src">@drawable/ic_more_vert</item>
+    </style>
+    <style name="Theme.LoginActivity.NoActionBar">
+        <item name="windowActionBar">false</item>
+        <item name="windowNoTitle">true</item>
+    </style>
+    <style name="Theme.LoginActivity.AppBarOverlay"
+        parent="ThemeOverlay.AppCompat.Dark.ActionBar" />
+    <style name="Theme.LoginActivity.PopupOverlay" parent="ThemeOverlay.AppCompat.Light" />
+
+
 </resources>

@@ -20,10 +20,9 @@ import java.util.List;
 public class BookVendorRegistration extends AppCompatActivity {
 
     EditText vendorFullName,vendorShopName,vendorShopAddress,vendorCityName,vendorPhoneNo,vendorPersonalNo;
-    Button btnVendorBook,btnVendorSchool,btnBook;
-    LinearLayout vendorBookLayout,vendorSchoolLayout;
+    Button btnVendorSchool,btnBook;
+    LinearLayout vendorSchoolLayout;
     List<String> schoolNameList = new ArrayList<>();
-    List<String> bookNameList = new ArrayList<>();
 
     FirebaseDatabase database;
 
@@ -38,19 +37,15 @@ public class BookVendorRegistration extends AppCompatActivity {
         vendorCityName = findViewById(R.id.book_vendor_city);
         vendorPhoneNo = findViewById(R.id.book_vendor_phone);
         vendorPersonalNo = findViewById(R.id.book_vendor_personal_name);
-        btnVendorBook = findViewById(R.id.btn_book_vendor_add);
         btnVendorSchool = findViewById(R.id.btn_book_vendor_school_add);
         btnBook = findViewById(R.id.btn_book_list_add);
         vendorSchoolLayout = findViewById(R.id.book_vendor_school_layout_list);
-        vendorBookLayout = findViewById(R.id.book_vendor_layout_list);
 
         database = FirebaseDatabase.getInstance();
 
         btnBook.setOnClickListener(view ->{
             validateFiled();
         });
-
-        btnVendorBook.setOnClickListener(view -> addBookView());
 
         btnVendorSchool.setOnClickListener(view -> addSchoolView());
 
@@ -91,7 +86,6 @@ public class BookVendorRegistration extends AppCompatActivity {
             b.setPhoneNumber(phoneNo);
             b.setPersonalNumber(personalNo);
             b.setSchoolNameList(schoolNameList);
-            b.setBookNameList(bookNameList);
 
             database.getReference().child("User").child(phone).child("BookVendor").child(fullName).setValue(b);
             finish();
@@ -101,7 +95,6 @@ public class BookVendorRegistration extends AppCompatActivity {
 
     private boolean checkIfValidAndRead() {
         schoolNameList.clear();
-        bookNameList.clear();
         boolean result = true;
 
         for (int i=0;i<vendorSchoolLayout.getChildCount();i++){
@@ -118,25 +111,10 @@ public class BookVendorRegistration extends AppCompatActivity {
 
         }
 
-        for (int i=0;i<vendorBookLayout.getChildCount();i++){
-
-            View bookView = vendorBookLayout.getChildAt(i);
-
-            EditText bookName = bookView.findViewById(R.id.edt_shop_name);
-
-            if (!bookName.getText().toString().equals("")){
-                bookNameList.add(bookName.getText().toString());
-            } else {
-                result = false;
-            }
-        }
 
         if (schoolNameList.size() == 0){
             result = false;
             Toast.makeText(this, "Add School Name First!", Toast.LENGTH_SHORT).show();
-        } else if (bookNameList.size() == 0){
-            result = false;
-            Toast.makeText(this, "Add Book Name First!", Toast.LENGTH_SHORT).show();
         } else if (!result){
             Toast.makeText(this, "Enter All Detail correctly !", Toast.LENGTH_SHORT).show();
         }
@@ -160,20 +138,5 @@ public class BookVendorRegistration extends AppCompatActivity {
         vendorSchoolLayout.removeView(schoolNameView);
     }
 
-    private void addBookView() {
 
-        View bookNameView = getLayoutInflater().inflate(R.layout.row_add_shop_name,null,false);
-
-//        EditText edtShopName =  bookNameView.findViewById(R.id.edt_shop_name);
-        ImageView imgRemove =  bookNameView.findViewById(R.id.img_remove);
-
-        imgRemove.setOnClickListener(view -> removeBookView(bookNameView));
-        
-        vendorBookLayout.addView(bookNameView);
-    }
-
-    private void removeBookView(View bookNameView) {
-
-        vendorBookLayout.removeView(bookNameView);
-    }
 }

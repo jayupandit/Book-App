@@ -1,0 +1,130 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/layout_buy_list_item_bg"
+        android:layout_margin="8dp"
+        android:orientation="vertical"
+        android:backgroundTint="@color/light_grey">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="52dp"
+            android:layout_marginTop="12dp"
+            android:orientation="horizontal">
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:padding="6dp"
+                android:text="School Name :"
+                android:gravity="center"
+                android:textColor="@color/black"
+                android:textStyle="bold"
+                android:textSize="12dp" />
+
+            <TextView
+                android:id="@+id/txt_uni_req_school_name"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="2"
+                android:drawablePadding="12dp"
+                android:padding="6dp"
+                android:text="School Name "
+                android:textStyle="bold"
+                android:textColor="#DC0C0C"
+                android:textSize="12dp" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:layout_marginLeft="32dp"
+            android:layout_marginRight="12dp"
+            android:layout_marginBottom="12dp"
+            android:orientation="horizontal">
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:layout_height="wrap_content"
+                android:text="Class :"
+                android:textSize="12sp"
+                android:textColor="@color/black"
+                android:textStyle="bold"
+                android:padding="4dp"/>
+
+            <TextView
+                android:id="@+id/txt_uni_req_class"
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:layout_height="wrap_content"
+                android:text="class"
+                android:textStyle="bold"
+                android:textColor="#DC0C0C"
+                android:textSize="12sp"/>
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:text="Board :"
+                android:textColor="@color/black"
+                android:textSize="12sp"
+                android:textStyle="bold"
+                android:layout_height="wrap_content"/>
+
+            <TextView
+                android:id="@+id/txt_total_uni_req"
+                android:layout_width="0dp"
+                android:layout_weight="2"
+                android:layout_height="wrap_content"
+                android:text="Board"
+                android:textStyle="bold"
+                android:textColor="#DC0C0C"
+                android:textSize="12sp"/>
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="255dp"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="52dp"
+            android:layout_marginBottom="12dp"
+            android:orientation="horizontal">
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:padding="6dp"
+                android:text="item :"
+                android:gravity="center"
+                android:textColor="@color/black"
+                android:textStyle="bold"
+                android:textSize="12dp" />
+
+            <TextView
+                android:id="@+id/txt_uni_req_"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="2"
+                android:drawablePadding="12dp"
+                android:padding="6dp"
+                android:text=" Name "
+                android:textStyle="bold"
+                android:textColor="#DC0C0C"
+                android:textSize="12dp" />
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+</LinearLayout>

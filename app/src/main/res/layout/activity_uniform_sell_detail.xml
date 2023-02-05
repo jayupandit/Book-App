@@ -1,0 +1,500 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="@color/light_grey"
+    tools:context=".master.UniformSellDetailActivity">
+
+    <TextView
+        android:id="@+id/textView6"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="22dp"
+        android:gravity="center"
+        android:text="Uniform Sell Detail"
+        android:textColor="@color/white"
+        android:textSize="26sp"
+        android:padding="16dp"
+        android:textStyle="bold|italic"/>
+
+    <ScrollView
+        android:id="@+id/uniform_vendor_scroll_view"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="22dp"
+        android:layout_marginTop="0dp"
+        android:layout_marginEnd="22dp"
+        android:layout_marginBottom="22dp"
+        android:background="@drawable/layout_bg">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+        <TextView
+            android:layout_width="150dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="12dp"
+            android:layout_marginTop="12dp"
+            android:padding="4dp"
+            android:text="Uniform set name  :"
+            android:textColor="@color/black"
+            android:textSize="16sp"
+            android:textStyle="bold" />
+
+        <EditText
+            android:id="@+id/uniform_set_name"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="12dp"
+            android:layout_marginRight="12dp"
+            android:hint="Name"
+            android:inputType="text"
+            android:maxLines="1"
+            android:padding="12dp" />
+
+        <TextView
+            android:layout_width="150dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="12dp"
+            android:padding="4dp"
+            android:text="School Name :"
+            android:textColor="@color/black"
+            android:textSize="16sp"
+            android:textStyle="bold" />
+
+        <EditText
+            android:id="@+id/uniform_sell__school_name"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="12dp"
+            android:layout_marginRight="12dp"
+            android:hint="@string/school_name"
+            android:inputType="text"
+            android:maxLines="1"
+            android:padding="12dp" />
+
+            <TextView
+                android:layout_width="150dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="12dp"
+                android:layout_marginTop="12dp"
+                android:padding="4dp"
+                android:text="Board:"
+                android:textColor="@color/black"
+                android:textSize="16sp"
+                android:textStyle="bold" />
+
+            <EditText
+                android:id="@+id/uniform_board"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="12dp"
+                android:layout_marginRight="12dp"
+                android:hint="Board"
+                android:inputType="text"
+                android:maxLines="1"
+                android:padding="12dp" />
+
+        <TextView
+            android:layout_width="150dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="12dp"
+            android:layout_marginTop="12dp"
+            android:padding="4dp"
+            android:text="@string/std_class"
+            android:textColor="@color/black"
+            android:textSize="16sp"
+            android:textStyle="bold" />
+
+        <EditText
+            android:id="@+id/uniform_class"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="12dp"
+            android:layout_marginRight="12dp"
+            android:hint="@string/std_class"
+            android:inputType="text"
+            android:maxLines="1"
+            android:padding="12dp" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:layout_margin="8dp">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_weight="1"
+                        android:layout_height="wrap_content"
+                        android:text="Item"
+                        android:textColor="@color/black"
+                        android:padding="4dp"
+                        android:textStyle="bold"
+                        android:textSize="16sp"/>
+
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_weight="1.2"
+                        android:layout_height="wrap_content"
+                        android:text="Available"
+                        android:padding="4dp"
+                        android:textColor="@color/black"
+                        android:textStyle="bold"
+                        android:textSize="16sp"/>
+
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_weight="0.6"
+                        android:layout_height="wrap_content"
+                        android:text="Free "
+                        android:padding="4dp"
+                        android:textColor="@color/black"
+                        android:textStyle="bold"
+                        android:textSize="16sp"/>
+
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_weight="1"
+                        android:layout_height="wrap_content"
+                        android:text="Size"
+                        android:padding="4dp"
+                        android:textColor="@color/black"
+                        android:textStyle="bold"
+                        android:textSize="16sp"/>
+
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_weight="1"
+                        android:layout_height="wrap_content"
+                        android:text="Paid"
+                        android:padding="4dp"
+                        android:textColor="@color/black"
+                        android:textStyle="bold"
+                        android:textSize="16sp"/>
+
+            </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="12dp">
+
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_weight="1"
+                        android:layout_height="wrap_content"
+                        android:text="@string/shirt"
+                        android:layout_marginBottom="4dp"
+                        android:textSize="16sp"
+                        android:padding="8dp"
+                        android:textColor="@color/purple_700"/>
+
+                    <CheckBox
+                        android:id="@+id/check_shirt_NA"
+                        android:layout_width="0dp"
+                        android:layout_weight="1.2"
+                        android:padding="8dp"
+                        android:layout_marginStart="8dp"
+                        android:layout_marginBottom="4dp"
+                        android:layout_height="wrap_content"/>
+
+                    <CheckBox
+                        android:id="@+id/check_shirt_free"
+                        android:layout_width="0dp"
+                        android:layout_weight="0.6"
+                        android:padding="8dp"
+                        android:layout_marginStart="18dp"
+                        android:layout_marginBottom="4dp"
+                        android:layout_marginEnd="4dp"
+                        android:layout_height="wrap_content"/>
+
+                    <EditText
+                        android:id="@+id/edt_shirt_size"
+                        android:layout_width="0dp"
+                        android:layout_weight="1"
+                        android:layout_height="wrap_content"
+                        android:hint="size"
+                        android:visibility="gone"
+                        android:layout_marginBottom="4dp"
+                        android:layout_marginEnd="4dp"
+                        android:background="@drawable/round_grey"
+                        android:padding="8dp"
+                        android:textSize="16sp"/>
+
+                    <EditText
+                        android:id="@+id/edt_shirt_paid"
+                        android:layout_width="0dp"
+                        android:layout_weight="1"
+                        android:layout_height="wrap_content"
+                        android:hint="@string/prize"
+                        android:visibility="gone"
+                        android:layout_marginBottom="4dp"
+                        android:layout_marginEnd="4dp"
+                        android:background="@drawable/round_grey"
+                        android:padding="8dp"
+                        android:textSize="16sp"/>
+
+                    <TextView
+                        android:id="@+id/txt_shirt_disable"
+                        android:layout_width="0dp"
+                        android:layout_weight="2"
+                        android:text="Disable"
+                        android:gravity="center"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="4dp"
+                        android:layout_marginEnd="4dp"
+                        android:padding="8dp"
+                        android:textSize="16sp"/>
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="12dp">
+
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_weight="1"
+                        android:layout_height="wrap_content"
+                        android:text="@string/pant"
+                        android:layout_marginBottom="4dp"
+                        android:textSize="16sp"
+                        android:padding="8dp"
+                        android:textColor="@color/purple_700"/>
+
+                    <CheckBox
+                        android:id="@+id/check_pant_NA"
+                        android:layout_width="0dp"
+                        android:layout_weight="1.2"
+                        android:padding="8dp"
+                        android:layout_marginStart="8dp"
+                        android:layout_marginBottom="4dp"
+                        android:layout_height="wrap_content"/>
+
+                    <CheckBox
+                        android:id="@+id/check_pant_free"
+                        android:layout_width="0dp"
+                        android:layout_weight="0.6"
+                        android:padding="8dp"
+                        android:layout_marginStart="18dp"
+                        android:layout_marginBottom="4dp"
+                        android:layout_marginEnd="4dp"
+                        android:layout_height="wrap_content"/>
+
+                    <EditText
+                        android:id="@+id/edt_pant_size"
+                        android:layout_width="0dp"
+                        android:layout_weight="1"
+                        android:layout_height="wrap_content"
+                        android:hint="size"
+                        android:visibility="gone"
+                        android:layout_marginBottom="4dp"
+                        android:layout_marginEnd="4dp"
+                        android:background="@drawable/round_grey"
+                        android:padding="8dp"
+                        android:textSize="16sp" />
+
+                    <EditText
+                        android:id="@+id/edt_pant_paid"
+                        android:layout_width="0dp"
+                        android:layout_weight="1"
+                        android:layout_height="wrap_content"
+                        android:hint="@string/prize"
+                        android:visibility="gone"
+                        android:layout_marginBottom="4dp"
+                        android:layout_marginEnd="4dp"
+                        android:background="@drawable/round_grey"
+                        android:padding="8dp"
+                        android:textSize="16sp" />
+
+                    <TextView
+                        android:id="@+id/txt_pant_disable"
+                        android:layout_width="0dp"
+                        android:layout_weight="2"
+                        android:text="Disable"
+                        android:gravity="center"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="4dp"
+                        android:layout_marginEnd="4dp"
+                        android:padding="8dp"
+                        android:textSize="16sp"/>
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="12dp">
+
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_weight="1"
+                        android:layout_height="wrap_content"
+                        android:text="@string/tie"
+                        android:layout_marginBottom="4dp"
+                        android:textSize="16sp"
+                        android:padding="8dp"
+                        android:textColor="@color/purple_700"/>
+
+                    <CheckBox
+                        android:id="@+id/check_tie_NA"
+                        android:layout_width="0dp"
+                        android:layout_weight="1.2"
+                        android:padding="8dp"
+                        android:layout_marginStart="8dp"
+                        android:layout_marginBottom="4dp"
+                        android:layout_height="wrap_content"/>
+
+                    <CheckBox
+                        android:id="@+id/check_tie_free"
+                        android:layout_width="0dp"
+                        android:layout_weight="0.6"
+                        android:padding="8dp"
+                        android:layout_marginStart="18dp"
+                        android:layout_marginBottom="4dp"
+                        android:layout_marginEnd="4dp"
+                        android:layout_height="wrap_content"/>
+
+                    <EditText
+                        android:id="@+id/edt_tie_size"
+                        android:layout_width="0dp"
+                        android:layout_weight="1"
+                        android:layout_height="wrap_content"
+                        android:hint="size"
+                        android:visibility="gone"
+                        android:layout_marginBottom="4dp"
+                        android:layout_marginEnd="4dp"
+                        android:background="@drawable/round_grey"
+                        android:padding="8dp"
+                        android:textSize="16sp" />
+
+                    <EditText
+                        android:id="@+id/edt_tie_uniform_paid"
+                        android:layout_width="0dp"
+                        android:layout_weight="1"
+                        android:layout_height="wrap_content"
+                        android:hint="@string/prize"
+                        android:visibility="gone"
+                        android:layout_marginBottom="4dp"
+                        android:layout_marginEnd="4dp"
+                        android:background="@drawable/round_grey"
+                        android:padding="8dp"
+                        android:textSize="16sp"/>
+
+                    <TextView
+                        android:id="@+id/txt_tie_disable"
+                        android:layout_width="0dp"
+                        android:layout_weight="2"
+                        android:text="Disable"
+                        android:gravity="center"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="4dp"
+                        android:layout_marginEnd="4dp"
+                        android:padding="8dp"
+                        android:textSize="16sp"/>
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="12dp">
+
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_weight="1"
+                        android:layout_height="wrap_content"
+                        android:text="@string/shoes"
+                        android:layout_marginBottom="4dp"
+                        android:textSize="16sp"
+                        android:padding="8dp"
+                        android:textColor="@color/purple_700"/>
+
+                    <CheckBox
+                        android:id="@+id/check_shoes_NA"
+                        android:layout_width="0dp"
+                        android:layout_weight="1.2"
+                        android:padding="8dp"
+                        android:layout_marginStart="8dp"
+                        android:layout_marginBottom="4dp"
+                        android:layout_height="wrap_content"/>
+
+                    <CheckBox
+                        android:id="@+id/check_shoes_free"
+                        android:layout_width="0dp"
+                        android:layout_weight="0.6"
+                        android:padding="8dp"
+                        android:layout_marginStart="18dp"
+                        android:layout_marginBottom="4dp"
+                        android:layout_marginEnd="4dp"
+                        android:layout_height="wrap_content"/>
+
+                    <EditText
+                        android:id="@+id/edt_shoes_size"
+                        android:layout_width="0dp"
+                        android:layout_weight="1"
+                        android:layout_height="wrap_content"
+                        android:hint="@string/prize"
+                        android:visibility="gone"
+                        android:layout_marginBottom="4dp"
+                        android:layout_marginEnd="4dp"
+                        android:background="@drawable/round_grey"
+                        android:padding="8dp"
+                        android:textSize="16sp" />
+
+                    <EditText
+                        android:id="@+id/edt_shoes_uniform_paid"
+                        android:layout_width="0dp"
+                        android:layout_weight="1"
+                        android:layout_height="wrap_content"
+                        android:hint="prize"
+                        android:visibility="gone"
+                        android:layout_marginBottom="4dp"
+                        android:layout_marginEnd="4dp"
+                        android:background="@drawable/round_grey"
+                        android:padding="8dp"
+                        android:textSize="16sp"/>
+
+                    <TextView
+                        android:id="@+id/txt_shoes_disable"
+                        android:layout_width="0dp"
+                        android:layout_weight="2"
+                        android:text="Disable"
+                        android:gravity="center"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="4dp"
+                        android:layout_marginEnd="4dp"
+                        android:padding="8dp"
+                        android:textSize="16sp"/>
+
+                </LinearLayout>
+
+            </LinearLayout>
+
+
+            <Button
+                android:id="@+id/btn_uniform_sell_add"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginTop="40dp"
+                android:layout_marginBottom="32dp"
+                android:background="@drawable/button_bg"
+                android:text="Add" />
+
+    </LinearLayout>
+
+    </ScrollView>
+
+</LinearLayout>

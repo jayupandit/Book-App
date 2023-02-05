@@ -163,27 +163,6 @@
             android:background="@drawable/style_uniform_spinner"
             android:padding="12dp"/>
 
-        <TextView
-            android:layout_width="150dp"
-            android:layout_height="wrap_content"
-            android:text="Book Name :"
-            android:textStyle="bold"
-            android:textColor="@color/black"
-            android:layout_marginTop="8dp"
-            android:layout_marginRight="12dp"
-            android:layout_marginLeft="12dp"
-            android:textSize="16sp"/>
-        <Spinner
-            android:id="@+id/spinner_book_name_list"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginBottom="12dp"
-            android:layout_marginRight="12dp"
-            android:layout_marginLeft="12dp"
-            android:layout_marginTop="12dp"
-            android:background="@drawable/style_uniform_spinner"
-            android:padding="12dp"/>
-
 
     </LinearLayout>
 

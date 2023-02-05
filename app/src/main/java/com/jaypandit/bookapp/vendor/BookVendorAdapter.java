@@ -50,7 +50,7 @@ public class BookVendorAdapter extends BaseAdapter {
         TextView phoneNo = convertView.findViewById(R.id.txt_book_ven_phone_no);
         TextView permanentNo = convertView.findViewById(R.id.txt_book_ven_permanent_no);
         Spinner spinnerSchoolList = convertView.findViewById(R.id.spinner_book_scl_name);
-        Spinner spinnerBookList = convertView.findViewById(R.id.spinner_book_name_list);
+
 
         fullName.setText(vendorArrayList.get(position).getVendorFullName());
         shopName.setText(vendorArrayList.get(position).getShopName());
@@ -63,9 +63,6 @@ public class BookVendorAdapter extends BaseAdapter {
         adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         spinnerSchoolList.setAdapter(adapter);
 
-        ArrayAdapter<String> adapter1 = new ArrayAdapter<>(mContext, android.R.layout.simple_spinner_item,vendorArrayList.get(position).getBookNameList());
-        adapter1.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
-        spinnerBookList.setAdapter(adapter1);
 
         return convertView;
     }

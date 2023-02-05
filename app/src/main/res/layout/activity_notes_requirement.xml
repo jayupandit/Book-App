@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".master.NotesRequirementActivity">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="40dp"
+                android:layout_weight="1"
+                android:text="Notes Requirement"
+                android:textSize="26sp"
+                android:textStyle="bold"
+                android:layout_marginRight="5dp"
+                android:layout_marginLeft="10dp"
+                android:paddingLeft="10dp"
+                android:textColor="@color/black"/>
+
+        </LinearLayout>
+
+
+        <ListView
+            android:id="@+id/notes_req_list_view"
+            android:layout_width="match_parent"
+            android:layout_height="355dp" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:orientation="horizontal">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="40dp"
+                android:layout_marginLeft="10dp"
+                android:layout_marginRight="5dp"
+                android:layout_weight="1"
+                android:paddingLeft="10dp"
+                android:text="Other Requirement"
+                android:textColor="@color/black"
+                android:textSize="26sp"
+                android:textStyle="bold" />
+
+        </LinearLayout>
+
+        <ListView
+            android:id="@+id/other_notes_req_list_view"
+            android:layout_width="match_parent"
+            android:layout_height="308dp" />
+
+    </LinearLayout>
+</ScrollView>

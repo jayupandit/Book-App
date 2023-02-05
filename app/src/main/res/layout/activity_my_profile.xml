@@ -1,0 +1,180 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#F4F1F1"
+    tools:context=".master.MyProfileActivity">
+
+    <LinearLayout
+        android:id="@+id/layout_my_profile"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:background="@color/white">
+
+        <FrameLayout
+            android:id="@+id/frame_layout"
+            android:layout_width="130dp"
+            android:layout_height="130dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+        <de.hdodenhof.circleimageview.CircleImageView
+            android:id="@+id/my_profile_img"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_margin="22dp"
+            android:src="@drawable/user"/>
+
+            <de.hdodenhof.circleimageview.CircleImageView
+                android:layout_width="36dp"
+                android:layout_height="36dp"
+                android:layout_gravity="bottom"
+                android:layout_marginBottom="18dp"
+                android:layout_marginStart="80dp"
+                android:src="@drawable/camera_bg"
+                app:civ_border_width="2dp"
+                app:civ_border_color="@color/light_grey"
+                app:civ_circle_background_color="@color/white" />
+
+        </FrameLayout>
+
+        <TextView
+            android:id="@+id/textView10"
+            android:layout_width="210dp"
+            android:layout_height="130dp"
+            android:paddingStart="12dp"
+            android:gravity="center_vertical"
+            android:text="@string/full_name"
+            android:textColor="@color/black"
+            android:textSize="22sp"
+            android:textStyle="bold" />
+
+        <ImageView
+            android:layout_width="48dp"
+            android:layout_height="match_parent"
+            android:src="@drawable/ic_right"/>
+
+    </LinearLayout>
+
+    <TextView
+        android:id="@+id/txt_help"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/layout_my_profile"
+        android:text="Help Centre"
+        android:layout_marginTop="10dp"
+        android:background="@color/white"
+        android:drawablePadding="16dp"
+        android:textSize="18sp"
+        android:padding="18dp"
+        app:drawableLeftCompat="@drawable/ic_headphone" />
+
+    <TextView
+        android:id="@+id/txt_change_lan"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/txt_help"
+        android:text="Change language"
+        android:layout_marginTop="10dp"
+        android:background="@color/white"
+        android:drawablePadding="16dp"
+        android:textSize="18sp"
+        android:padding="18dp"
+        app:drawableStartCompat="@drawable/ic_translator" />
+
+    <TextView
+        android:id="@+id/txt_my_bank"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/txt_change_lan"
+        android:text="My Bank &amp; UPI Details"
+        android:layout_marginTop="2dp"
+        android:background="@color/white"
+        android:drawablePadding="16dp"
+        android:textSize="18sp"
+        android:padding="18dp"
+        app:drawableStartCompat="@drawable/ic_account_balance" />
+
+    <TextView
+        android:id="@+id/txt_my_shared"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/txt_my_bank"
+        android:text="My Shared Products"
+        android:layout_marginTop="2dp"
+        android:background="@color/white"
+        android:drawablePadding="16dp"
+        android:textSize="18sp"
+        android:padding="18dp"
+        app:drawableStartCompat="@drawable/ic_share"/>
+
+    <TextView
+        android:id="@+id/txt_My_viewed"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/txt_my_shared"
+        android:text="My Viewed Products"
+        android:layout_marginTop="2dp"
+        android:background="@color/white"
+        android:drawablePadding="16dp"
+        android:textSize="18sp"
+        android:padding="18dp"
+        app:drawableStartCompat="@drawable/ic_history"/>
+
+    <TextView
+        android:id="@+id/txt_my_payment"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/txt_My_viewed"
+        android:text="My Payment"
+        android:layout_marginTop="2dp"
+        android:background="@color/white"
+        android:drawablePadding="16dp"
+        android:textSize="18sp"
+        android:padding="18dp"
+        app:drawableStartCompat="@drawable/ic_payment"/>
+
+    <TextView
+        android:id="@+id/txt_setting"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/txt_my_payment"
+        android:text="Setting"
+        android:layout_marginTop="2dp"
+        android:background="@color/white"
+        android:drawablePadding="16dp"
+        android:textSize="18sp"
+        android:padding="18dp"
+        app:drawableStartCompat="@drawable/ic_settings"/>
+
+    <TextView
+        android:id="@+id/txt_rate"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/txt_setting"
+        android:text="Book Rate"
+        android:layout_marginTop="2dp"
+        android:background="@color/white"
+        android:drawablePadding="16dp"
+        android:textSize="18sp"
+        android:padding="18dp"
+        app:drawableStartCompat="@drawable/ic_delete"/>
+
+    <TextView
+        android:id="@+id/txt_legal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/txt_setting"
+        android:text="Legal and Policies"
+        android:layout_marginTop="2dp"
+        android:background="@color/white"
+        android:drawablePadding="16dp"
+        android:textSize="18sp"
+        android:padding="18dp"
+        app:drawableStartCompat="@drawable/ic_police_order"/>
+
+</RelativeLayout>

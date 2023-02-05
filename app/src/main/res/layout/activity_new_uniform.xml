@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".master.NewUniformActivity">
+
+    <EditText
+        android:id="@+id/search_buy_view"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="school name, class , set name"
+        android:textColorHint="#C0BEBE"
+        android:textColor="@color/white"
+        android:gravity="center_vertical"
+        android:lines="1"
+        android:background="@drawable/search_view_backgaround"
+        android:layout_marginHorizontal="12dp"
+        android:drawableLeft="@drawable/ic_search"
+        android:drawableTint="@color/black"
+        android:layout_marginTop="16dp"
+        android:padding="10dp"
+        android:layout_marginBottom="16dp"/>
+
+    <ListView
+        android:id="@+id/listViewNewBook"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"/>
+
+</LinearLayout>

@@ -5,7 +5,7 @@ import java.util.List;
 public class BookVendor {
 
     String vendorFullName,shopName,shopAddress,cityName,phoneNumber,personalNumber;
-    List<String> schoolNameList,bookNameList;
+    List<String> schoolNameList;
 
     public String getVendorFullName() {
         return vendorFullName;
@@ -70,12 +70,4 @@ public class BookVendor {
         return this;
     }
 
-    public List<String> getBookNameList() {
-        return bookNameList;
-    }
-
-    public BookVendor setBookNameList(List<String> bookNameList) {
-        this.bookNameList = bookNameList;
-        return this;
-    }
 }
